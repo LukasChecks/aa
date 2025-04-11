@@ -12,14 +12,7 @@ local function simulateTouch()
     firetouchinterest(hrp, partToTouch, 1) -- Touch end
 end
 
--- Fires once when the menu becomes visible
-maxNinjitsuMenu:GetPropertyChangedSignal("Visible"):Connect(function()
-    if maxNinjitsuMenu.Visible then
-        simulateTouch()
-    end
-end)
-
--- Optional: fire once right away if already visible
+-- Only fire once, if currently visible
 if maxNinjitsuMenu.Visible then
     simulateTouch()
 end
